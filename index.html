@@ -219,27 +219,27 @@ h1 {
     <p class="subtitle">Fast launcher with clean tabs and official mirrors</p>
 
     <div class="buttons">
-        <button class="btn primary" onclick="openGame('https://x.mess.eu.org/ninja-wasm/', 'https://eaglercraft.com/play/')">
+        <button class="btn primary" onclick="openGameCloaked('https://x.mess.eu.org/ninja-wasm/')">
             1.8.8 (WASM)
         </button>
 
-        <button class="btn" onclick="openGame('https://x.mess.eu.org/ninja-js/', 'https://eaglercraft.com/play/')">
+        <button class="btn" onclick="openGameCloaked('https://x.mess.eu.org/ninja-js/')">
             1.8.8 (JS)
         </button>
 
-        <button class="btn" onclick="openGame('https://happinessad.github.io/html/a1/', 'https://happinessad.github.io/html/a1/')">
+        <button class="btn" onclick="openGameNormal('https://happinessad.github.io/html/a1/')">
             1.5.2-sp2.01 (FAST)
         </button>
 
-        <button class="btn" onclick="openGame('https://happinessad.github.io/html/a2/', 'https://happinessad.github.io/html/a2/')">
+        <button class="btn" onclick="openGameNormal('https://happinessad.github.io/html/a2/')">
             22w43 (Classic)
         </button>
 
-        <button class="btn" onclick="openGame('https://happinessad.github.io/html/a3/', 'https://happinessad.github.io/html/a3/')">
+        <button class="btn" onclick="openGameNormal('https://happinessad.github.io/html/a3/')">
             Precision Client (Enhanced Experience)
         </button>
 
-        <button class="btn" onclick="openGame('https://happinessad.github.io/html/a4/', 'https://happinessad.github.io/html/a4/')">
+        <button class="btn" onclick="openGameNormal('https://happinessad.github.io/html/a4/')">
             Resent Client (PvP Powerhouse (Modded))
         </button>
     </div>
@@ -248,15 +248,9 @@ h1 {
 </div>
 
 <script>
-function openGame(primary, fallback) {
-    const targetFallback = fallback || primary;
-
+function openGameCloaked(primary) {
     const cloakWindow = window.open("about:blank", "_blank");
     if (!cloakWindow) {
-        const timeout = setTimeout(() => {
-            window.location.assign(targetFallback);
-        }, 2500);
-        window.addEventListener("pagehide", () => clearTimeout(timeout), { once: true });
         window.location.assign(primary);
         return;
     }
@@ -280,7 +274,10 @@ iframe{border:0;width:100%;height:100%}
 </body>
 </html>`);
     cloakWindow.document.close();
-    window.location.replace("https://www.google.com/");
+}
+
+function openGameNormal(primary) {
+    window.location.assign(primary);
 }
 </script>
 

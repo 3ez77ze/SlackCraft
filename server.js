@@ -17,10 +17,6 @@ app.get("/mess", (req, res) => {
   res.redirect(302, "https://mess.eu.org/");
 });
 
-app.get("/play", (req, res) => {
-  res.redirect(302, "https://eaglercraft.com/play/");
-});
-
 app.get("/servers", (req, res) => {
   res.redirect(302, "https://servers.eaglercraft.com/");
 });
