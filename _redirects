@@ -1,0 +1,17 @@
+# Keep game runtime on source origins (no proxy rewrite)
+/ninja-wasm https://x.mess.eu.org/ninja-wasm/ 302!
+/ninja-wasm/ https://x.mess.eu.org/ninja-wasm/ 302!
+/ninja-wasm/* https://x.mess.eu.org/ninja-wasm/:splat 302!
+
+/ninja-js https://x.mess.eu.org/ninja-js/ 302!
+/ninja-js/ https://x.mess.eu.org/ninja-js/ 302!
+/ninja-js/* https://x.mess.eu.org/ninja-js/:splat 302!
+
+/wasm https://x.mess.eu.org/ninja-wasm/ 302!
+/wasm/* https://x.mess.eu.org/ninja-wasm/:splat 302!
+/js https://x.mess.eu.org/ninja-js/ 302!
+/js/* https://x.mess.eu.org/ninja-js/:splat 302!
+
+/mess https://mess.eu.org/ 302!
+/play https://eaglercraft.com/play/ 302!
+/servers https://servers.eaglercraft.com/ 302!
