@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SlackCraft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --bg: #0c0f14;
+    --accent: #00ff9c;
+    --text: #ffffff;
+    --muted: #9aa4b2;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: radial-gradient(circle at top, #111827, #020617);
+    font-family: system-ui, sans-serif;
+    color:var(--text);
+}
+
+.container {
+    text-align:center;
+    animation: fade 0.6s ease;
+}
+
+h1 {
+    font-size:2.8rem;
+    margin-bottom:10px;
+    background: linear-gradient(45deg, #00ff9c, #00cfff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+p {
+    color:var(--muted);
+    margin-bottom:40px;
+}
+
+.buttons {
+    display:flex;
+    gap:20px;
+    justify-content:center;
+}
+
+.btn {
+    padding:16px 34px;
+    border-radius:14px;
+    border:none;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:600;
+    transition:0.25s;
+}
+
+.btn:hover { transform:translateY(-3px); }
+
+.primary {
+    background:var(--accent);
+    color:#000;
+    box-shadow:0 0 20px rgba(0,255,156,0.4);
+}
+
+.secondary {
+    background:transparent;
+    border:1px solid #2a2f3a;
+    color:var(--text);
+}
+
+.secondary:hover { border-color:var(--accent); }
+
+.servers-btn {
+    margin-top:25px;
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:12px;
+    background:#1f2937;
+    color:#fff;
+    text-decoration:none;
+    transition:0.25s;
+}
+
+.servers-btn:hover { background:#374151; }
+
+@keyframes fade {
+    from {opacity:0; transform:translateY(15px);}
+    to {opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>SlackCraft</h1>
+    <p>Select version</p>
+
+    <div class="buttons">
+        <button class="btn primary" onclick="openGame('wasm')">
+            1.8.8 (WASM)
+        </button>
+
+        <button class="btn secondary" onclick="openGame('js')">
+            1.8.8 (JS)
+        </button>
+    </div>
+
+    <a class="servers-btn" href="https://servers.eaglercraft.com/" target="_blank">
+        Servers
+    </a>
+</div>
+
+<script>
+function openGame(type) {
+    const url = type === "wasm" ? "/wasm" : "/js";
+
+    // safer popup open
+    const win = window.open("", "_blank");
+
+    if (!win) {
+        alert("Popup blocked! Allow popups for this site.");
+        return;
+    }
+
+    win.location.href = url;
+
+    let tries = 0;
+
+    const cloak = setInterval(() => {
+        try {
+            win.document.title = "about:blank";
+            win.history.replaceState({}, "", "about:blank");
+            clearInterval(cloak);
+        } catch (e) {
+            tries++;
+            if (tries > 50) clearInterval(cloak);
+        }
+    }, 100);
+}
+</script>
+
+</body>
+</html>
