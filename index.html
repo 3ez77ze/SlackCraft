@@ -213,9 +213,14 @@ h1 {
     margin-top: 14px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 12px;
     align-items: center;
+}
+
+.tip {
+    color: var(--muted);
+    font-size: 0.86rem;
 }
 
 .servers-btn {
@@ -392,6 +397,7 @@ h1 {
     </div>
 
     <div class="footer-row">
+        <p class="tip">Tip: WASM works faster on low end laptops or pcs.</p>
         <a class="servers-btn" href="/servers" target="_blank" rel="noopener noreferrer">Multiplayer Servers</a>
     </div>
 </div>
