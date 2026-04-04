@@ -218,6 +218,13 @@ h1 {
     align-items: center;
 }
 
+.footer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
 .tip {
     color: var(--muted);
     font-size: 0.86rem;
@@ -342,7 +349,7 @@ h1 {
     </div>
 
     <h1>SlackCraft Portal</h1>
-    <p class="subtitle">Pick a client build and launch it in a cloaked tab.</p>
+    <p class="subtitle">Pick a client build and launch it to our lightweight launcher!</p>
 
     <div class="buttons">
         <button class="btn primary" onclick="openGameCloaked('https://eaglercraft.dev/clients/Release%201.8.8%20WASM/index.html')">
@@ -398,7 +405,10 @@ h1 {
 
     <div class="footer-row">
         <p class="tip">Tip: WASM works faster on low end laptops or pcs.</p>
-        <a class="servers-btn" href="/servers" target="_blank" rel="noopener noreferrer">Multiplayer Servers</a>
+        <div class="footer-actions">
+            <a class="servers-btn" href="/servers" target="_blank" rel="noopener noreferrer">Multiplayer Servers</a>
+            <a class="servers-btn" href="https://pastebin.com/EqMK0LhB" target="_blank" rel="noopener noreferrer">DMCA/Private Policy</a>
+        </div>
     </div>
 </div>
 
