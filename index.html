@@ -337,57 +337,57 @@ h1 {
     </div>
 
     <h1>SlackCraft Portal</h1>
-    <p class="subtitle">Fast Minecraft Web Launcher</p>
+    <p class="subtitle">Pick a client build and launch it in a cloaked tab.</p>
 
     <div class="buttons">
         <button class="btn primary" onclick="openGameCloaked('https://eaglercraft.dev/clients/Release%201.8.8%20WASM/index.html')">
             <span class="title">Release 1.8.8 (WASM)</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">WASM build • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/Release%201.12.2%20WASM/index.html')">
             <span class="title">Release 1.12.2 (WASM)</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">WASM build • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/Release%201.8.8%20JS/index.html')">
             <span class="title">Release 1.8.8 (JS)</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">JS build • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/Release%201.12.2%20JS/index.html')">
             <span class="title">Release 1.12.2 (JS)</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">JS build • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/Tuff%20Client%20WASM/index.html')">
             <span class="title">TuffClient 1.12.2</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">Custom client • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/Tuff%20Client%20WASM/index.html')">
             <span class="title">Resent Client 1.8.8</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">Custom client • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/EaglerForge%20JS/index.html')">
             <span class="title">EaglerForge 1.8.8</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">Modded client • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/PixelClient%201.8.8%20WASM/index.html')">
             <span class="title">PixelClient</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">Custom client • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/Astra%20Client%201.6.0%20WASM/index.html')">
             <span class="title">Astra Client 1.8.8</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">Custom client • cloaked tab</span>
         </button>
 
         <button class="btn" onclick="openGameCloaked('https://eaglercraft.dev/clients/EaglyMC%201.20%20WASM/index.html')">
             <span class="title">EaglyMC 1.20.1</span>
-            <span class="meta">Cloaked Tab Launch</span>
+            <span class="meta">Modern client • cloaked tab</span>
         </button>
     </div>
 
@@ -410,16 +410,14 @@ function openGameCloaked(primary) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Classes</title>
+<title>School Portal</title>
 <style>
 html,body{margin:0;height:100%;overflow:hidden;background:#000}
 iframe{border:0;width:100%;height:100%}
-.fallback{position:fixed;left:10px;bottom:10px;padding:8px 12px;border-radius:8px;background:#111827;color:#fff;font:14px/1.2 system-ui,sans-serif;text-decoration:none}
 </style>
 </head>
 <body>
 <iframe src="${primary}" allowfullscreen referrerpolicy="no-referrer"></iframe>
-<a class="fallback" href="${primary}" target="_self" rel="noopener noreferrer">Open if blocked</a>
 </body>
 </html>`);
     cloakWindow.document.close();
